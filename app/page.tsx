@@ -2,19 +2,21 @@
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { v4 as uuidv4 } from 'uuid'
 
-// DEBUG LOG
-console.log('🏠 Home page loaded — preparing to redirect to /chat/[id]')
+// ✅ Client-safe way to generate UUID in browser
+function generateUUID() {
+  return crypto.randomUUID()
+}
 
 export default function Page() {
   const router = useRouter()
 
   useEffect(() => {
-    const id = uuidv4()
+    console.log('🏠 HER homepage mounted. Generating chat ID...')
+    const id = generateUUID()
     console.log('🔁 Redirecting to /chat/' + id)
     router.replace(`/chat/${id}`)
   }, [router])
 
-  return null
+  return <p style={{ color: '#fff', textAlign: 'center', paddingTop: '50vh' }}>Loading HER...</p>
 }
