@@ -2,32 +2,19 @@
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { v4 as uuidv4 } from 'uuid'
 
-function generateUUID() {
-  return crypto.randomUUID()
-}
+// DEBUG LOG
+console.log('🏠 Home page loaded — preparing to redirect to /chat/[id]')
 
-export default function Page() {
+export default function HomePage() {
   const router = useRouter()
 
   useEffect(() => {
-    console.log('🌈 HER homepage is working!')
-    const id = generateUUID()
-    console.log('🚀 Redirecting to /chat/' + id)
+    const id = uuidv4()
+    console.log('🚀 Redirecting to chat ID:', id)
     router.replace(`/chat/${id}`)
   }, [router])
 
-  return (
-    <div style={{
-      height: '100vh',
-      background: 'linear-gradient(to bottom right, #110022, #330044)',
-      color: 'white',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      fontSize: '2rem'
-    }}>
-      🪞 HER is waking up...
-    </div>
-  )
+  return null
 }
