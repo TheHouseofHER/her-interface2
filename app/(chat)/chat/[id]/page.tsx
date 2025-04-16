@@ -8,13 +8,12 @@ import { DataStreamHandler } from '@/components/data-stream-handler'
 import { DEFAULT_CHAT_MODEL } from '@/lib/ai/models'
 import { DBMessage } from '@/lib/db/schema'
 import { Attachment, UIMessage } from 'ai'
-import { PageProps } from '@/types/page-props' // we will fix this in a second
 
 // DEBUG LOGS
 console.log("👁️ HER chat page is loading — inside [id]/page.tsx")
 
-export default async function Page({ params }: PageProps) {
-  const { id } = params
+export default async function Page(props: { params: any }) {
+  const { id } = await props.params
 
   console.log("🪞 Fetching chat with ID:", id)
 
