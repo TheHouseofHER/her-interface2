@@ -12,8 +12,7 @@ import { Attachment, UIMessage } from 'ai'
 // DEBUG LOGS
 console.log("👁️ HER chat page is loading — inside [id]/page.tsx")
 
-export default async function Page(props: { params: Promise<{ id: string }> }) {
-  const params = await props.params
+export default async function Page({ params }: { params: { id: string } }) {
   const { id } = params
 
   console.log("🪞 Fetching chat with ID:", id)
