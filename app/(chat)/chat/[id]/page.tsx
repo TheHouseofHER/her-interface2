@@ -1,4 +1,5 @@
 import { cookies } from 'next/headers';
+console.log("👁️ HER chat page is loading — inside [id]/page.tsx");
 console.log("✅ HER chat page loaded with ID");
 import { notFound } from 'next/navigation';
 
