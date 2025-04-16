@@ -1,6 +1,9 @@
 'use client'
-import { useEffect } from 'react'
+
+// @ts-ignore
 import { v4 as uuidv4 } from 'uuid'
+
+import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 export default function Page() {
